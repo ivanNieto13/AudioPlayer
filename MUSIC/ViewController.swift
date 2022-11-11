@@ -73,6 +73,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     @objc private func updateSelectedDurationSlider() {
         audioPlayer.currentTime = TimeInterval(sliderDuration.value)
         audioPlayer.play()
+        if !btnStop.isEnabled {
+            btnStop.isEnabled = true
+            btnPlay.isEnabled = false
+        }
     }
     
     @objc private func updateDurationSlider() {
