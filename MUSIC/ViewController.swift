@@ -29,9 +29,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     
     @IBAction func PlayPress(_ sender: UIButton) {
-        audioPlayer.play()
         btnStop.isEnabled = true
         btnPlay.isEnabled = false
+        audioPlayer.play()
     }
     
     @IBAction func StopPress(_ sender: UIButton) {
@@ -66,7 +66,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     @objc private func updateVolumeSlider() {
-            audioPlayer.volume = sliderVolume.value
+        audioPlayer.volume = sliderVolume.value
         
     }
     
@@ -75,6 +75,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         audioPlayer.play()
         if !btnStop.isEnabled {
             btnStop.isEnabled = true
+            btnPlay.isEnabled = false
+        }
+        if btnStop.isEnabled  && btnStop.isEnabled {
             btnPlay.isEnabled = false
         }
     }
@@ -86,7 +89,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
             btnStop.isEnabled = false
         }
     }
-
+    
     
 }
 
